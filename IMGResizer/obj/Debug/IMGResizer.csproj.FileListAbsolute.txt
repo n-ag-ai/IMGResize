@@ -1,0 +1,8 @@
+C:\Users\jims9\Dropbox\Program\C#\IMGResizer\IMGResizer\bin\Debug\IMGResizer.exe.config
+C:\Users\jims9\Dropbox\Program\C#\IMGResizer\IMGResizer\bin\Debug\IMGResizer.exe
+C:\Users\jims9\Dropbox\Program\C#\IMGResizer\IMGResizer\bin\Debug\IMGResizer.pdb
+C:\Users\jims9\Dropbox\Program\C#\IMGResizer\IMGResizer\obj\Debug\IMGResizer.csprojAssemblyReference.cache
+C:\Users\jims9\Dropbox\Program\C#\IMGResizer\IMGResizer\obj\Debug\IMGResizer.Properties.Resources.resources
+C:\Users\jims9\Dropbox\Program\C#\IMGResizer\IMGResizer\obj\Debug\IMGResizer.csproj.GenerateResource.cache
+C:\Users\jims9\Dropbox\Program\C#\IMGResizer\IMGResizer\obj\Debug\IMGResizer.exe
+C:\Users\jims9\Dropbox\Program\C#\IMGResizer\IMGResizer\obj\Debug\IMGResizer.pdb
