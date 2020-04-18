@@ -28,6 +28,7 @@ namespace IMGResizer
             WaitDialog waitDialog = new WaitDialog();
             waitDialog.Owner = this;
             waitDialog.MainMsg = "処理中";
+            waitDialog.SubMsg = "";
             waitDialog.ProgressMax = imageList.Count;
             waitDialog.ProgressMin = 0;
             waitDialog.ProgressStep = 1;
@@ -53,6 +54,7 @@ namespace IMGResizer
                 if (bitmap == null)
                 {
                     message("問題が発生しました。");
+
                     Application.DoEvents();
                     Thread.Sleep(100);
                     this.Activate();
@@ -83,8 +85,6 @@ namespace IMGResizer
             this.Activate();
             waitDialog.Close();
             this.Enabled = true;
-
-            imageList.Clear();
         }
 
         private string saveDirectory(string imagePath)
@@ -152,12 +152,42 @@ namespace IMGResizer
 
         private void onDrop(object sender, DragEventArgs e)
         {
-            textBox1.Text = "";
+            //ArrayListの初期化
+            if (imageList != null)
+            {
+                imageList.Clear();
+            }
+
+            path_textBox.Text = "";
+
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+            readFile(files);
+        }
+
+        private void readFile(string[]files)
+        {
+            WaitDialog2 waitDialog2 = new WaitDialog2();
+            waitDialog2.Owner = this;
+            waitDialog2.MainMessage = "処理中";
+            waitDialog2.SubMessage = "";
+            this.Enabled = false;
+            waitDialog2.Show();
+            int iCount = 0;
+
             for (int i = 0; i < files.Length; i++)
             {
+                if(waitDialog2.IsAborting == true)
+                {
+                    break;
+                }
+                waitDialog2.SubMessage = iCount.ToString() + " 件";
+                Application.DoEvents();
+
                 if (File.Exists(files[i]))
                 {
+                    iCount++;
+                    waitDialog2.SubMessage = iCount.ToString() + " 件";
+                    Application.DoEvents();
                     addList(files[i]);
                 }
                 else if (Directory.Exists(files[i]))
@@ -167,17 +197,34 @@ namespace IMGResizer
                     {
                         files2 = System.IO.Directory.GetFiles(files[i], "*", System.IO.SearchOption.TopDirectoryOnly);
                     }
-                    else if(all_radioButton.Checked)
+                    else if (all_radioButton.Checked)
                     {
                         files2 = System.IO.Directory.GetFiles(files[i], "*", System.IO.SearchOption.AllDirectories);
                     }
-                    
-                    for(int j = 0; j < files2.Length; j++)
+
+                    for (int j = 0; j < files2.Length; j++)
                     {
+                        iCount++;
+                        waitDialog2.SubMessage = iCount.ToString() + " 件";
+                        Application.DoEvents();
                         addList(files2[j]);
                     }
                 }
             }
+            if(waitDialog2.DialogResult == DialogResult.Abort)
+            {
+                waitDialog2.MainMessage = "処理を中断しました。";
+            }
+            else
+            {
+                waitDialog2.MainMessage = "処理を完了しました。";
+                waitDialog2.SubMessage = iCount.ToString() + " 件";
+            }
+            Application.DoEvents();
+            Thread.Sleep(100);
+            this.Activate();
+            waitDialog2.Close();
+            this.Enabled = true;
         }
 
         private void addList(String file) 
@@ -189,7 +236,7 @@ namespace IMGResizer
                     image.RawFormat.Equals(System.Drawing.Imaging.ImageFormat.Png))
                 {
                     imageList.Add(file);
-                    textBox1.Text += file + "\r\n";
+                    path_textBox.Text += file + "\r\n";
                 }
                 image.Dispose();
             } catch (System.OutOfMemoryException){}

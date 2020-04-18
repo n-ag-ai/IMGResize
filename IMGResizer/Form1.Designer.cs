@@ -36,7 +36,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.resize_textBox = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.path_textBox = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.all_radioButton = new System.Windows.Forms.RadioButton();
             this.top_radioButton = new System.Windows.Forms.RadioButton();
@@ -130,15 +130,15 @@
             this.resize_textBox.Size = new System.Drawing.Size(112, 19);
             this.resize_textBox.TabIndex = 0;
             // 
-            // textBox1
+            // path_textBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(264, 12);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(211, 247);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.WordWrap = false;
+            this.path_textBox.Location = new System.Drawing.Point(264, 12);
+            this.path_textBox.Multiline = true;
+            this.path_textBox.Name = "path_textBox";
+            this.path_textBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.path_textBox.Size = new System.Drawing.Size(211, 247);
+            this.path_textBox.TabIndex = 4;
+            this.path_textBox.WordWrap = false;
             // 
             // groupBox3
             // 
@@ -174,7 +174,7 @@
             this.top_radioButton.Text = "フォルダ直下のみ";
             this.top_radioButton.UseVisualStyleBackColor = true;
             // 
-            // Resize
+            // Form1
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -182,12 +182,12 @@
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.ClientSize = new System.Drawing.Size(487, 340);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.path_textBox);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.start_button);
             this.Controls.Add(this.DD_textBox);
-            this.Name = "Resize";
+            this.Name = "Form1";
             this.Text = "Resize";
             this.DragDrop += new System.Windows.Forms.DragEventHandler(this.onDrop);
             this.DragEnter += new System.Windows.Forms.DragEventHandler(this.onEnter);
@@ -212,7 +212,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox resize_textBox;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox path_textBox;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.RadioButton all_radioButton;
         private System.Windows.Forms.RadioButton top_radioButton;

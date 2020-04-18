@@ -6,3 +6,4 @@ C:\Users\jims9\Dropbox\Program\C#\IMGResizer\IMGResizer\obj\Debug\IMGResizer.Pro
 C:\Users\jims9\Dropbox\Program\C#\IMGResizer\IMGResizer\obj\Debug\IMGResizer.csproj.GenerateResource.cache
 C:\Users\jims9\Dropbox\Program\C#\IMGResizer\IMGResizer\obj\Debug\IMGResizer.exe
 C:\Users\jims9\Dropbox\Program\C#\IMGResizer\IMGResizer\obj\Debug\IMGResizer.pdb
+C:\Users\jims9\Dropbox\Program\C#\IMGResizer\IMGResizer\obj\Debug\IMGResizer.Form1.resources
