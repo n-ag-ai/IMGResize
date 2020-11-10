@@ -18,9 +18,9 @@ namespace IMGResizer
 
         private void start_button_Click(object sender, EventArgs e)
         {
-            int size = parseSize();
-            int side = parseSide();
-            if (!dataCheck(size))
+            int size = ParseSize();
+            int side = ParseSide();
+            if (!DataCheck(size))
             {
                 return;
             }
@@ -45,14 +45,14 @@ namespace IMGResizer
                 Application.DoEvents();
 
                 ImageResize imageResize = new ImageResize();
-                imageResize.setAfterSize(size);
-                imageResize.setBaseSide(side);
-                imageResize.setInputImagePath(imagePath);
+                imageResize.SetAfterSize(size);
+                imageResize.SetBaseSide(side);
+                imageResize.SetInputImagePath(imagePath);
 
-                Bitmap bitmap = imageResize.startResize();
+                Bitmap bitmap = imageResize.StartResize();
                 if (bitmap == null)
                 {
-                    message("問題が発生しました。");
+                    Message("問題が発生しました。");
                     Application.DoEvents();
                     Thread.Sleep(100);
                     this.Activate();
@@ -62,7 +62,7 @@ namespace IMGResizer
                     imageList.Clear();
                     return;
                 }
-                bitmap.Save(saveDirectory(imagePath));
+                bitmap.Save(SaveDirectory(imagePath));
                 bitmap.Dispose();
 
                 iCount++;
@@ -87,7 +87,7 @@ namespace IMGResizer
             imageList.Clear();
         }
 
-        private string saveDirectory(string imagePath)
+        private string SaveDirectory(string imagePath)
         {
             string imageName = Path.GetFileName(imagePath);
             string imageDir = Path.GetDirectoryName(imagePath);
@@ -99,7 +99,7 @@ namespace IMGResizer
             return newDir + "\\" + imageName;
         }
 
-        private Boolean dataCheck(int size)
+        private Boolean DataCheck(int size)
         {
             if (size == -1)
             {
@@ -107,13 +107,13 @@ namespace IMGResizer
             }
             else if (size == 0)
             {
-                message("変換後サイズに\"0\"が設定されています。\r\n\"0\"は設定できません");
+                Message("変換後サイズに\"0\"が設定されています。\r\n\"0\"は設定できません");
                 return false;
             }
             return true;
         }
 
-        private int parseSide()
+        private int ParseSide()
         {
             if (width_radioButton.Checked)
             {
@@ -126,31 +126,31 @@ namespace IMGResizer
             return 0;
         }
 
-        private int parseSize()
+        private int ParseSize()
         {
             try
             {
                 int size = int.Parse(resize_textBox.Text);
                 if (size <= 0 || size > 10000)
                 {
-                    message("変換後サイズに入力できる値は1～10000です");
+                    Message("変換後サイズに入力できる値は1～10000です");
                     return -1;
                 }
                 return size;
             }
             catch (FormatException)
             {
-                message("変換後サイズに数値以外が入力されています。");
+                Message("変換後サイズに数値以外が入力されています。");
                 return -1;
             }
         }
 
-        private void message(String msg)
+        private void Message(String msg)
         {
             MessageBox.Show(msg, "入力値エラー", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void onDrop(object sender, DragEventArgs e)
+        private void OnDrop(object sender, DragEventArgs e)
         {
             textBox1.Text = "";
             string[] files = (string[])e.Data.GetData(DataFormats.FileDrop, false);
@@ -158,7 +158,7 @@ namespace IMGResizer
             {
                 if (File.Exists(files[i]))
                 {
-                    addList(files[i]);
+                    AddList(files[i]);
                 }
                 else if (Directory.Exists(files[i]))
                 {
@@ -174,13 +174,13 @@ namespace IMGResizer
                     
                     for(int j = 0; j < files2.Length; j++)
                     {
-                        addList(files2[j]);
+                        AddList(files2[j]);
                     }
                 }
             }
         }
 
-        private void addList(String file) 
+        private void AddList(String file) 
         {
             try
             {
@@ -195,7 +195,7 @@ namespace IMGResizer
             } catch (System.OutOfMemoryException){}
         }
 
-        private void onEnter(object sender, DragEventArgs e)
+        private void OnEnter(object sender, DragEventArgs e)
         {
             if (e.Data.GetDataPresent(DataFormats.FileDrop))
             {

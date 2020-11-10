@@ -1,0 +1,9 @@
+C:\Users\jims9\Desktop\workspace\c#\IMGResize\IMGResizer\bin\Release\IMGResizer.exe.config
+C:\Users\jims9\Desktop\workspace\c#\IMGResize\IMGResizer\bin\Release\IMGResizer.exe
+C:\Users\jims9\Desktop\workspace\c#\IMGResize\IMGResizer\bin\Release\IMGResizer.pdb
+C:\Users\jims9\Desktop\workspace\c#\IMGResize\IMGResizer\obj\Release\IMGResizer.Properties.Resources.resources
+C:\Users\jims9\Desktop\workspace\c#\IMGResize\IMGResizer\obj\Release\IMGResizer.csproj.GenerateResource.cache
+C:\Users\jims9\Desktop\workspace\c#\IMGResize\IMGResizer\obj\Release\IMGResizer.csproj.CoreCompileInputs.cache
+C:\Users\jims9\Desktop\workspace\c#\IMGResize\IMGResizer\obj\Release\IMGResizer.exe
+C:\Users\jims9\Desktop\workspace\c#\IMGResize\IMGResizer\obj\Release\IMGResizer.pdb
+C:\Users\jims9\Desktop\workspace\c#\IMGResize\IMGResizer\obj\Release\IMGResizer.csprojAssemblyReference.cache

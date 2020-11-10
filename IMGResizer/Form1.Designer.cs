@@ -189,8 +189,8 @@
             this.Controls.Add(this.DD_textBox);
             this.Name = "Resize";
             this.Text = "Resize";
-            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.onDrop);
-            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.onEnter);
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.OnDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.OnEnter);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);

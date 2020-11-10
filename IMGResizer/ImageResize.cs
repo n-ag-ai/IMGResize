@@ -10,19 +10,19 @@ namespace IMGResizer
         private int baseSide;
 
         //ドラッグアンドドロップしたイメージのパス
-        public void setInputImagePath(String inImagePath)
+        public void SetInputImagePath(String inImagePath)
         {
             this.inImagePath = inImagePath;
         }
 
         //リサイズ後のサイズ
-        public void setAfterSize(int afterSize)
+        public void SetAfterSize(int afterSize)
         {
             this.afterSize = afterSize;
         }
 
         //リサイズの
-        public Boolean setBaseSide(int baseSide)
+        public Boolean SetBaseSide(int baseSide)
         {
             this.baseSide = baseSide;
             if (this.baseSide != 1 || this.baseSide != 2)
@@ -33,7 +33,7 @@ namespace IMGResizer
         }
 
         //リサイズ処理開始
-        public Bitmap startResize()
+        public Bitmap StartResize()
         {
             System.Drawing.Imaging.ImageFormat imageFormat;
             //リサイズ前のイメージの読み取り
